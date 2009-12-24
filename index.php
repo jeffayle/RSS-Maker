@@ -4,8 +4,13 @@
 <ul>
 <?php
     $feeds = feed_list($db);
-    foreach ($feeds as $f)
-        echo "<li>{$f['title']}</li>";
+    foreach ($feeds as $f) {
+        echo '<li>';
+        echo "<a href=\"feed.php?f={$f['id']}\">";
+        echo $f['title'];
+        echo '</a>';
+        echo '</li>';
+    }
 ?>
 </ul>
 
