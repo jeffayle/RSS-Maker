@@ -9,3 +9,8 @@
 
     <body>
         <h1>RSS Creator</h1>
+
+<?php
+    require('lib.php');
+    $db = db_connect();
+?>
