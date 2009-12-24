@@ -32,4 +32,12 @@ function feed_list($db) {
     $result = $db->arrayQuery('SELECT * FROM feeds', SQLITE_ASSOC);
     return $result;
 }
+
+/* Get a single feed */
+function get_feed($db, $id) {
+    $id = sqlite_escape_string($id);
+    $result = $db->arrayQuery("SELECT * FROM feeds WHERE id='$id'",
+            SQLITE_ASSOC);
+    return $result[0];
+}
 ?>
