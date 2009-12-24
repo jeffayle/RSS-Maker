@@ -26,4 +26,10 @@ function new_feed($db, $name, $desc, $url, $cat, $copyright, $image_url,
                 '$image_title','$lang','$webmaster','$editor')");
      return true;
 }
+
+/* Get a list of feeds */
+function feed_list($db) {
+    $result = $db->array_query('SELECT * FROM feeds', SQLITE_ASSOC);
+    return $result;
+}
 ?>
