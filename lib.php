@@ -29,7 +29,7 @@ function new_feed($db, $name, $desc, $url, $cat, $copyright, $image_url,
 
 /* Get a list of feeds */
 function feed_list($db) {
-    $result = $db->array_query('SELECT * FROM feeds', SQLITE_ASSOC);
+    $result = $db->arrayQuery('SELECT * FROM feeds', SQLITE_ASSOC);
     return $result;
 }
 ?>
