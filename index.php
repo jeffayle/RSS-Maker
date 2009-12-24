@@ -1,7 +1,13 @@
 <? require('header.php'); ?>
 
 <h2>Feeds</h2>
-<!-- TODO -->
+<ul>
+<?php
+    $feeds = feed_list($db);
+    foreach ($feeds as $f)
+        echo "<li>{$f['title']}</li>";
+?>
+</ul>
 
 <h2>New Feed</h2>
 <form action="newfeed.php" method="post">
