@@ -79,4 +79,10 @@ function article_list($db, $fid) {
             SQLITE_ASSOC);
     return $result;
 }
+
+function get_article($db, $id) {
+    $id = sqlite_escape_string($id);
+    $result = $db->arrayQuery("SELECT * FROM articles WHERE id='$id'",
+            SQLITE_ASSOC);
+    return $result[0];
 ?>
