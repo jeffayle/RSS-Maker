@@ -16,7 +16,7 @@
     <channel>
         <title><?= $feed['title'] ?></title>
         <link><?= $feed['link'] ?></link>
-        <description><?= $feed['description'] ?></description>
+        <description><![CDATA[<?= $feed['description'] ?>]]></description>
         <? if ($feed['category']!='') { ?>
         <category><?= $feed['category'] ?></category>
         <? } if ($feed['copyright']!='') { ?>
@@ -41,7 +41,7 @@
         <item>
             <title><?= $a['title'] ?></title>
             <link><?= $a['link'] ?></link>
-            <description><?= $a['description'] ?></description>
+            <description><![CDATA[<?= $a['description'] ?>]]></description>
             <? if ($a['author']!='') { ?>
             <author><?= $a['author'] ?></author>
             <? } if ($a['category']!='') { ?>
