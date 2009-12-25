@@ -1,9 +1,16 @@
 <? require('header.php');
     $fid = $_GET['f'];
     $feed = get_feed($db, $fid);
+    $articles = article_list($db, $fid);
 ?>
 <h2><? echo $feed['title']; ?></h2>
-<!-- TODO: Feed items -->
+<ul>
+<? foreach ($articles as $a) {
+    echo '<li>';
+    echo "<a href=\"article.php?a={$a['id']}\">{$a['title']}</a>";
+    echo '</li>';
+} ?>
+</ul>
 
 <h2>New Article</h2>
 <form action="newarticle.php" method="post">
