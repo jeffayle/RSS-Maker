@@ -61,6 +61,7 @@ function get_feed($db, $id) {
 function new_article($db, $feed,$title,$desc,$link,$author,$cat,$pubDate) {
     $feed = sqlite_escape_string($feed);
     $title = sqlite_escape_string($feed);
+    $desc = sqlite_escape_string($feed);
     $link = sqlite_escape_string($link);
     $author = sqlite_escape_string($author);
     $cat = sqlite_escape_string($cat);
