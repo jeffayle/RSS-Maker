@@ -22,4 +22,8 @@
     <input type="submit" value="Update Article" />
 </form>
 
+<div class="remove">
+    <a href="rm_article.php?id=<?=$id?>">Delete Article</a>
+</div>
+
 <? require('footer.php'); ?>
