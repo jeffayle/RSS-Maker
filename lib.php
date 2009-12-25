@@ -102,4 +102,11 @@ function get_article($db, $id) {
             SQLITE_ASSOC);
     return $result[0];
 }
+
+/* Deletes an article */
+function rm_article($db, $id) {
+    $id = sqlite_escape_string($id);
+    $db->query("DELETE FROM articles WHERE id='$id'");
+    return true;
+}
 ?>
