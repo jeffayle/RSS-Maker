@@ -6,6 +6,8 @@
 
 <div id="nav">
     <a href="index.php">Home</a>
+    |
+    <a href="feed.rss.php?f=<?=$fid?>">RSS Feed</a>
 </div>
 
 <h2><? echo $feed['title']; ?></h2>
