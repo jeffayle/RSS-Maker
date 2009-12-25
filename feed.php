@@ -46,4 +46,8 @@
     <input type="submit" value="Update feed" />
 </form>
 
+<div class="remove">
+    <a href="rm_feed.php?id=<?=$fid?>">Delete Feed</a>
+</div>
+
 <? require('footer.php'); ?>
