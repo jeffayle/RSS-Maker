@@ -58,7 +58,8 @@ function get_feed($db, $id) {
 }
 
 /* Add a new article */
-function new_article($db, $feed,$title,$desc,$link,$author,$cat,$pubDate) {
+function new_article($db, $feed,$title,$desc,$link,$author,$cat,
+        $pubDate, $update=0) {
     $feed = sqlite_escape_string($feed);
     $title = sqlite_escape_string($feed);
     $desc = sqlite_escape_string($feed);
@@ -66,10 +67,23 @@ function new_article($db, $feed,$title,$desc,$link,$author,$cat,$pubDate) {
     $author = sqlite_escape_string($author);
     $cat = sqlite_escape_string($cat);
     $pubDate = sqlite_escape_string($pubDate);
-    $db->query("INSERT INTO articles (feed,title,link,description,author,
-            category,pubDate)
-        VALUES ('$feed','$title','$link','$desc','$author',
-        '$cat','$pubDate')");
+    
+    if ($update == 0) {
+        $db->query("INSERT INTO articles (feed,title,link,description,author,
+                category,pubDate)
+            VALUES ('$feed','$title','$link','$desc','$author',
+            '$cat','$pubDate')");
+    } else {
+        $id = sqlite_escape_string($update);
+        $db->query("UPDATE articles SET
+                title = '$title$',
+                link = '$link',
+                description = '$desc',
+                author = '$author',
+                category = '$cat',
+                pubDate = '$pubDate'
+            WHERE id = '$id'");
+    }
 }
 
 /* Get a list of articles */
