@@ -95,6 +95,7 @@ function article_list($db, $fid) {
     return $result;
 }
 
+/* Get a specific article */
 function get_article($db, $id) {
     $id = sqlite_escape_string($id);
     $result = $db->arrayQuery("SELECT * FROM articles WHERE id='$id'",
