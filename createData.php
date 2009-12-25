@@ -17,6 +17,17 @@
         webmaster STRING,
         editor STRING
     )');
+
+    /* Articles Table */
+    $db->query('CREATE TABLE articles (
+        id INTEGER PRIMARY KEY,
+        title STRING,
+        link STRING,
+        description STRING,
+        author STRING,
+        category STRING,
+        pubDate INTEGER
+    )');
 ?>
 
 Database created.
