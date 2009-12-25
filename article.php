@@ -2,6 +2,13 @@
     $id = $_GET['a'];
     $article = get_article($db, $id);
 ?>
+
+<div id="nav">
+    <a href="index.php">Home</a>
+    |
+    <a href="feed.php?f=<?=$article['feed']?>">Feed</a>
+</div>
+
 <h2><?= $article['title'] ?></h2>
 <form action="newarticle.php?edit" method="post">
     <input type="hidden" name="article" value="<?=$id?>" />

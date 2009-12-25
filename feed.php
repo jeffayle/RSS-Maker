@@ -3,6 +3,11 @@
     $feed = get_feed($db, $fid);
     $articles = article_list($db, $fid);
 ?>
+
+<div id="nav">
+    <a href="index.php">Home</a>
+</div>
+
 <h2><? echo $feed['title']; ?></h2>
 <ul>
 <? foreach ($articles as $a) {
