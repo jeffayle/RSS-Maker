@@ -5,6 +5,19 @@
 <h2><? echo $feed['title']; ?></h2>
 <!-- TODO: Feed items -->
 
+<h2>New Article</h2>
+<form action="newarticle.php" method="post">
+    <input type="hidden" name="feed" value="<?=$fid?>" />
+    Title: <input type="text" name="title" /> <br />
+    <textarea name="desc">Description</textarea> <br />
+    Link: <input type="text" name="link" /> <br />
+    Author: <input type="text" name="author" /> <br />
+    Category: <input type="text" name="cat" /> <br />
+    Published: <input type="text" name="pubDate" value="<?=time()?>" />
+            (* epoch time) <br />
+    <input type="submit" value="New Article" />
+</form>
+
 <h2>Edit</h2>
 <form action="newfeed.php?edit" method="post">
     <input type="hidden" name="feed" value="<?= $fid; ?>" />
