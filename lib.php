@@ -70,4 +70,13 @@ function new_article($db, $feed,$title,$desc,$link,$author,$cat,$pubDate) {
         VALUES ('$feed','$title','$link','$desc','$author',
         '$cat','$pubDate')");
 }
+
+/* Get a list of articles */
+function article_list($db, $fid) {
+    $fid = sqlite_escape_string($fid);
+    $result = $db->arrayQuery("SELECT * FROM articles WHERE feed='$fid'
+                ORDER BY pubDate DESC",
+            SQLITE_ASSOC);
+    return $result;
+}
 ?>
