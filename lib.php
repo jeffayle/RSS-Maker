@@ -76,7 +76,7 @@ function new_article($db, $feed,$title,$desc,$link,$author,$cat,
     } else {
         $id = sqlite_escape_string($update);
         $db->query("UPDATE articles SET
-                title = '$title$',
+                title = '$title',
                 link = '$link',
                 description = '$desc',
                 author = '$author',
