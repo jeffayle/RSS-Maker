@@ -15,6 +15,9 @@
     $pubDate = $_POST['pubDate']*1;
 
     new_article($db, $feed,$title,$desc,$link,$auth,$cat,$pubDate,$update);
-
-    header("Location: feed.php?f=$feed");
+    
+    if ($update == 0)
+        header("Location: feed.php?f=$feed");
+    else
+        header("Location: article.php?a=$update");
 ?>
