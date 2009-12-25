@@ -1,6 +1,7 @@
 <?php
     require('lib.php');
     $db = db_connect();
+    $update = ($_SERVER['QUERY_STRING']=='edit') ? $_POST['feed'] : 0;
     
     $name = $_POST['name'];
     $desc = $_POST['desc'];
@@ -14,7 +15,7 @@
     $editor = $_POST['editor'];
 
     new_feed($db, $name,$desc,$url,$cat,$copy,$image_url,$image_title,$language,
-            $webmaster, $editor);
+            $webmaster, $editor, $update);
 
     header('Location: index.php');
 ?>
