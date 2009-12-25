@@ -56,4 +56,17 @@ function get_feed($db, $id) {
             SQLITE_ASSOC);
     return $result[0];
 }
+
+/* Add a new article */
+function new_article($db, $feed,$title,$desc,$link,$author,$cat,$pubDate) {
+    $feed = sqlite_escape_string($feed);
+    $title = sqlite_escape_string($feed);
+    $link = sqlite_escape_string($link);
+    $author = sqlite_escape_string($author);
+    $cat = sqlite_escape_string($cat);
+    $pubDate = sqlite_escape_string($pubDate);
+    $db->query("INSERT INTO feeds (feed,title,link,description,author,
+            category,pubDate)
+        VALUES ('$feed','$title','$desc','$author','$cat','$pubDate')");
+}
 ?>
