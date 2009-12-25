@@ -24,8 +24,8 @@
         <? } if ($feed['image_url']!='') { ?>
         <image>
             <url><?= $feed['image_url'] ?></url>
-            <title><?= $feed['image_url'] ?></title>
-            <link><?= $feed['image_link'] ?></link>
+            <title><?= $feed['image_title'] ?></title>
+            <link><?= $feed['image_url'] ?></link>
         </image>
         <? } if ($feed['language']!='') { ?>
         <language><?= $feed['language'] ?></language>
