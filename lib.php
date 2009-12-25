@@ -109,4 +109,11 @@ function rm_article($db, $id) {
     $db->query("DELETE FROM articles WHERE id='$id'");
     return true;
 }
+
+/* Deletes a feed */
+function rm_feed($db, $id) {
+    $id = sqlite_escape_string($id);
+    $db->query("DELETE FROM feeds WHERE id='$id'");
+    return true;
+}
 ?>
