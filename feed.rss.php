@@ -1,11 +1,14 @@
 <?php
     /* Generates the actual RSS feed from the database */
-    header("Content-Type: text/plain"); //Just temporarily, for debudding
     require('lib.php');
     $db = db_connect();
 
     $feed = get_feed($db, $_GET['f']);
     $articles = article_list($db, $_GET['f']);
+
+    header("Content-Type: application/rss+xml");
+    header(
+        "Content-Disposition: attachment; filename=\"{$feed['title']}.rss\"");
 
     echo '<?xml version="1.0" encoding="ISO-8859-1" ?>';
 ?>
