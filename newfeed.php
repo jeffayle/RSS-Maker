@@ -17,5 +17,8 @@
     new_feed($db, $name,$desc,$url,$cat,$copy,$image_url,$image_title,$language,
             $webmaster, $editor, $update);
 
-    header('Location: index.php');
+    if ($update == 0)
+        header('Location: index.php');
+    else
+        header("Location: feed.php?f=$update");
 ?>
