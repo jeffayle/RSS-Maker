@@ -3,7 +3,7 @@
     $article = get_article($db, $id);
 ?>
 <h2><?= $article['title'] ?></h2>
-<form action="newarticle.php?edit">
+<form action="newarticle.php?edit" method="post">
     <input type="hidden" name="article" value="<?=$id?>" />
     Title: <input type="text" name="title" value="<?=$article['title']?>" /> <br />
     <textarea name="desc"><?=$article['description']?></textarea> <br />
