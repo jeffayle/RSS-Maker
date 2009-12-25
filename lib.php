@@ -113,6 +113,9 @@ function rm_article($db, $id) {
 /* Deletes a feed */
 function rm_feed($db, $id) {
     $id = sqlite_escape_string($id);
+    $articles = article_list($db, $id);
+    foreach ($articles as $a) //Remove all articles from that feed
+        rm_article($db, $a['id']);
     $db->query("DELETE FROM feeds WHERE id='$id'");
     return true;
 }
