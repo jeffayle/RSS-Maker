@@ -17,4 +17,4 @@
             $webmaster, $editor);
 ?>
 
-New feed created.
+    header('Location: index.php');
