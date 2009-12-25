@@ -65,8 +65,9 @@ function new_article($db, $feed,$title,$desc,$link,$author,$cat,$pubDate) {
     $author = sqlite_escape_string($author);
     $cat = sqlite_escape_string($cat);
     $pubDate = sqlite_escape_string($pubDate);
-    $db->query("INSERT INTO feeds (feed,title,link,description,author,
+    $db->query("INSERT INTO articles (feed,title,link,description,author,
             category,pubDate)
-        VALUES ('$feed','$title','$desc','$author','$cat','$pubDate')");
+        VALUES ('$feed','$title','$link','$desc','$author',
+        '$cat','$pubDate')");
 }
 ?>
