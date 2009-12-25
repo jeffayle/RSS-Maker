@@ -85,4 +85,5 @@ function get_article($db, $id) {
     $result = $db->arrayQuery("SELECT * FROM articles WHERE id='$id'",
             SQLITE_ASSOC);
     return $result[0];
+}
 ?>
