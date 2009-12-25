@@ -13,8 +13,8 @@
     $webmaster = $_POST['webmaster'];
     $editor = $_POST['editor'];
 
-    new_feed($db, $name,$desc,$url,$cat,$copy,$image_url,$image_title,$laguage,
+    new_feed($db, $name,$desc,$url,$cat,$copy,$image_url,$image_title,$language,
             $webmaster, $editor);
-?>
 
     header('Location: index.php');
+?>
