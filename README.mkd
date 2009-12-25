@@ -1,0 +1,17 @@
+# RSS Maker
+I needed to create a static RSS feed today, and found there were no good
+programs to create them, that would run on a mac (probably because of how
+little use static RSS feeds have).
+
+RSS Maker is written in PHP, so will run on any platform PHP will run on.
+Uses sqlite to store data, so there is no need to run a database server.
+
+## Installation
+Copy all the files somewhere that your webserver can find them, and set the
+permission on the `data` directory so the webserver can write to it.
+
+Run (either from the CLI or web) `createData.php`, which you can delete
+after running.
+
+If you are running on a public webserver, you will probably want to restrict
+access, since no authentication is required to use.
