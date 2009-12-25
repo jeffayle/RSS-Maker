@@ -13,7 +13,7 @@
         copyright STRING,
         image_url STRING,
         image_title STRING,
-        language VARCHAR(5),
+        language STRING,
         webmaster STRING,
         editor STRING
     )');
