@@ -21,6 +21,7 @@
     /* Articles Table */
     $db->query('CREATE TABLE articles (
         id INTEGER PRIMARY KEY,
+        feed INTEGER,
         title STRING,
         link STRING,
         description STRING,
